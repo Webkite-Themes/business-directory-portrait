@@ -1,4 +1,3 @@
-{{ log this}}
 <header class="webkite-results-header">
   {{>sorts this.sort}}
   {{>filters this.filters}}
@@ -13,23 +12,23 @@
   <div class="webkite-result-wrapper">
     {{#facet name="Image"}}<img src="{{displayValue}}"/>{{/facet}}
     <section class="webkite-result">
-      {{#facet name="First Name"}}<h2>{{displayValue}} </h2>{{/facet}}
-      {{#facet name="Last Name"}}<h2>{{displayValue}}</h2>{{/facet}}
+      {{#facet name="Business Name"}}<h2>{{displayValue}}</h2>{{/facet}}
       <ul>
-    	  <li>
-          <a class="webkite-address" target="_blank" href="http://maps.google.com/?q={{#facet name='Address 1'}}{{displayValue}}{{/facet}} {{#facet name='City'}}{{displayValue}}{{/facet}} {{#facet name='State'}}{{displayValue}}{{/facet}} {{#facet name='Zip Code'}}{{displayValue}}{{/facet}} {{#facet name='Country'}}{{displayValue}}{{/facet}}">
-          {{#facet name="Address 1"}}<span>{{displayValue}}</span>{{/facet}}
-          {{#facet name="Address 2"}}<span>{{displayValue}}</span>{{/facet}}
-          <span>{{#facet name="City"}}<span class="city">{{displayValue}}</span>{{/facet}}{{#facet name="State"}}<span class="state">{{displayValue}}</span>{{/facet}}
-          {{#facet name="Zip Code"}}{{displayValue}}{{/facet}}</span>
-          </a>
-        </li>
+<li>
+      {{#facet name="Category"}}
+      {{#if filterable}}
         <li>
-          {{#facet name="Email"}}<a class="webkite-email" href="mailto:{{displayValue}}">{{displayValue}}</a>{{/facet}}
+        {{#each values}}
+        <a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>{{#unless @last}}<br>{{/unless}}
+        {{/each}}
         </li>
-        <li>
-          {{#facet name="Phone Number"}}<a href="tel:{{displayValue}}">{{displayValue}}</a>{{/facet}}
-        </li>
+      {{else}}
+      <li>
+      {{#each values}}{{this}}{{#unless @last}}<br>{{/unless}}{{/each}}
+      </li>
+      {{/if}}
+      {{/facet}}
+      </li>
     	</ul>
     	
     	<a href="#{{this.id}}" data-id={{this.id}} class="webkite-toggle-item more-button" data-toggle="modal" data-animate="200ms" data-speed="100ms">more</a>

@@ -526,6 +526,10 @@ $mainGutter: 1.25em;
     border: 1px solid rgba(255,255,255,.2);
     padding: $mainGutter;
     text-align: justify;
+    a.webkite-website{
+          @include ellipsisThis;
+          width: 100%;
+          }
    a.webkite-address span{
       display: inline-block;
       max-width: 100%;
@@ -551,7 +555,13 @@ $mainGutter: 1.25em;
     @include boxedUp;
     display: inline-block;
     vertical-align: top;
-    h2{}
+    h2{
+      margin-bottom: $mainGutter/2;
+      }
+    p.description{
+      margin-bottom: $mainGutter/2;
+      text-align: left;
+      }
     li{
       padding-bottom: $mainGutter/2;
       text-align: left;

@@ -530,6 +530,13 @@
     background: rgba(255, 255, 255, 0.95);
     padding: 1.25em;
     text-align: justify; }
+    #webkite-results .webkite-result-modal a.webkite-website {
+      display: inline-block;
+      max-width: 100%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      width: 100%; }
     #webkite-results .webkite-result-modal a.webkite-address span {
       display: inline-block;
       max-width: 100%; }
@@ -563,6 +570,11 @@
     box-sizing: border-box;
     display: inline-block;
     vertical-align: top; }
+    #webkite-results .webkite-modal-block-forty h2, #webkite-results .webkite-modal-block-sixty h2 {
+      margin-bottom: 0.625em; }
+    #webkite-results .webkite-modal-block-forty p.description, #webkite-results .webkite-modal-block-sixty p.description {
+      margin-bottom: 0.625em;
+      text-align: left; }
     #webkite-results .webkite-modal-block-forty li, #webkite-results .webkite-modal-block-sixty li {
       padding-bottom: 0.625em;
       text-align: left; }

@@ -129,7 +129,8 @@ $mainGutter: 1.25em;
     height: 2.813em;
     }
     
-  } 
+  }
+ 
 /************************************************* SORTS */
 #webkite-results{
 
@@ -162,6 +163,7 @@ $mainGutter: 1.25em;
     }
   
   }
+
 /********************************************* SORT MENU */
 #webkite-results{
 
@@ -211,7 +213,6 @@ $mainGutter: 1.25em;
     }
   
   }
-
 
 /************************************************ FILTERS */
 #webkite-results{
@@ -585,7 +586,7 @@ $mainGutter: 1.25em;
 /************************************** INLINE FILTERS */
 #webkite-results{
 
-  .webkite-result-modal li b{
+  .webkite-result li b, .webkite-result-modal li b{
     position: relative;
     > .webkite-toggle{
       @include boxedUp;
@@ -613,7 +614,7 @@ $mainGutter: 1.25em;
         }
       }
     }
-  .webkite-result-modal .inline-filter-menu{
+  .webkite-result .inline-filter-menu, .webkite-result-modal .inline-filter-menu{
     @include roundedUp(.375em);
     @include shadowHere;
     -webkit-padding-start: 0;

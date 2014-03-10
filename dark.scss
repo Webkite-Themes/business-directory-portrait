@@ -465,9 +465,13 @@ $mainGutter: 1.25em;
         &.city, &.state{display: inline;}
         }
       .city + .state:before{content: ", ";}
-      a.webkite-email{
+      a.webkite-website{
         @include ellipsisThis;
         font-size: .875em;
+        width: 100%;
+        }
+      .facet-values{
+        display: inline-block;
         width: 100%;
         }
       }

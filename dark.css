@@ -453,13 +453,16 @@
         display: inline; }
     #webkite-results .webkite-result li .city + .state:before {
       content: ", "; }
-    #webkite-results .webkite-result li a.webkite-email {
+    #webkite-results .webkite-result li a.webkite-website {
       display: inline-block;
       max-width: 100%;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
       font-size: .875em;
+      width: 100%; }
+    #webkite-results .webkite-result li .facet-values {
+      display: inline-block;
       width: 100%; }
   #webkite-results .webkite-result a.more-button, #webkite-results .webkite-result a.less-button {
     -webkit-box-sizing: border-box;

@@ -10,7 +10,10 @@
 {{/each}}
   {{#each this.items}}
   <div class="webkite-result-wrapper">
-    {{#facet name="Image"}}<img src="{{displayValue}}"/>{{/facet}}
+    {{#facet name="Image"}}
+    <div class="webkite-result-image" style="background-image:url({{displayValue}});">
+    </div>
+    {{/facet}}
     <section class="webkite-result">
       {{#facet name="Business Name"}}<h2>{{displayValue}}</h2>{{/facet}}
       <ul>

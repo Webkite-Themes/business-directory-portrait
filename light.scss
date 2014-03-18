@@ -462,6 +462,7 @@ $mainGutter: 1.25em;
       }
     li{
       text-align: left;
+      list-style-type: none;
       margin-bottom: $mainGutter/2;
       a.webkite-address span{
         @include ellipsisThis;
@@ -704,6 +705,7 @@ $mainGutter: 1.25em;
     z-index: 2;
     li {
       padding-bottom: 0;
+      margin-bottom: 0;
       a{
         color: $linkColor;
         display: block;
@@ -711,13 +713,12 @@ $mainGutter: 1.25em;
         font-weight: 400;
         max-width: 100%;
         padding: $mainGutter/5 $mainGutter/2;
-        white-space: normal;
-        line-height:1.1;
+        white-space: pre;
+        word-wrap: normal;
         -webkit-hyphens: manual;
-      	-moz-hyphens:    manual;
-      	-ms-hyphens:     manual;
-      	hyphens:         manual;
-      	word-wrap: normal;
+        -moz-hyphens:    manual;
+        -ms-hyphens:     manual;
+        hyphens:         manual;
         &:hover{background: $linkColor;color: white;}
         }
       }

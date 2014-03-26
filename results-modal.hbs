@@ -1,8 +1,8 @@
 <div class="webkite-result-modal">
   <div class="webkite-modal-content">
     <div class="webkite-modal-block-forty">
-  <img src="{{#facet name="Image"}}{{displayValue}}{{/facet}}"/>
-  <h2>{{#facet name="Business Name"}}{{displayValue}}{{/facet}}</h2>
+  {{#facet name="Image"}}<img src="{{displayValue}}"/>{{/facet}}
+  {{#facet name="Business Name"}}<h2>{{displayValue}}</h2>{{/facet}}
   <ul>
     <li>
       <span class="facet-values">

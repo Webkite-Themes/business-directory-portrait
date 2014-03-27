@@ -92,6 +92,7 @@ $mainGutter: 1.25em;
       margin-bottom: $mainGutter/2;
       a.webkite-address span{
         @include ellipsisThis;
+        width: 100%;
         &.city, &.state{display: inline;}
         }
       .city + .state:before{content: ", ";}
@@ -193,6 +194,7 @@ $mainGutter: 1.25em;
       max-width: 100%;
       &.city, &.state{display: inline;}
       }
+    .webkite-address > span{width: 100%;}
     .city + .state:before{content: ", ";}
     a.less-button{
       @include boxedUp;

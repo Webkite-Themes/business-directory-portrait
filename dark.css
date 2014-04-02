@@ -789,7 +789,8 @@
   border: 1px solid rgba(255, 255, 255, 0.05);
   z-index: 2; }
   #webkite-results .webkite-result .inline-filter-menu li, #webkite-results .webkite-result-modal .inline-filter-menu li {
-    padding-bottom: 0; }
+    padding-bottom: 0;
+    margin-bottom: 0; }
     #webkite-results .webkite-result .inline-filter-menu li a, #webkite-results .webkite-result-modal .inline-filter-menu li a {
       color: #1b9cd2;
       display: block;

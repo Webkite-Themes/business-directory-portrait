@@ -41,8 +41,7 @@ $mainGutter: 1.25em;
     font: 700 1.125em/1 "Open Sans";
     margin: 0;
     text-align: left;
-    word-break: break-all;
-    word-break: break-word;
+    word-break: normal;
     }
   p, li{
     color: $lightOpacity;

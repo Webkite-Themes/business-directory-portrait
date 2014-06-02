@@ -178,6 +178,7 @@ $colorVariant:light;
     @include roundedUp (.625em);
     @include shadowHere;
     background: $backgroundColor;
+    border:1px solid $lighterOpacity;
     padding: $mainGutter $mainGutter/5*2 $mainGutter*2 $mainGutter/4*3;
     position:relative;
     overflow:hidden;
@@ -361,7 +362,7 @@ $colorVariant:light;
   
   .webkite-no-results{
     padding: $mainGutter 0;
-    margin-bottom:$mainGutter;
+    border-bottom:1px solid $lightestOpacity;
     h2{
       margin-bottom: $mainGutter;
       }

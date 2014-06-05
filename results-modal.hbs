@@ -1,104 +1,91 @@
 <div class="webkite-result-modal">
   <div class="webkite-modal-content">
     <div class="webkite-modal-block-forty">
-  {{#facet name="Image"}}<img src="{{displayValue}}"/>{{/facet}}
-  {{#facet name="Business Name"}}<h2>{{displayValue}}</h2>{{/facet}}
-  <ul>
-    <li>
-      <span class="facet-values">
-        <a target="_blank" class="webkite-address" href="http://maps.google.com/?q={{#facet name='Address 1'}}{{displayValue}}{{/facet}} {{#facet name='City'}}{{displayValue}}{{/facet}} {{#facet name='State'}}{{displayValue}}{{/facet}} {{#facet name='Zip Code'}}{{displayValue}}{{/facet}} {{#facet name='Country'}}{{displayValue}}{{/facet}}">
-          {{#facet name="Address 1"}}<span>{{displayValue}}</span>{{/facet}}
-          {{#facet name="Address 2"}}<span>{{displayValue}}</span>{{/facet}}
-          <span>
-            {{~#facet name="City"}}<span class="city">{{displayValue}}</span>{{/facet}}
-            {{~#facet name="State"}}<span class="state">{{displayValue}}</span>{{/facet}}
-            {{#facet name="Zip Code"}}{{displayValue}}{{/facet~}}
-          </span>
-          {{~#facet name="Country"}}<span>{{displayValue}}</span>{{/facet}}
-        </a>
-      </span>
-    </li>
-    <li>
-      {{#facet name="Phone Number"}}
-      <span class="facet-values">
-      <a href="tel:{{displayValue}}">{{displayValue}}</a>
-      </span>
-      {{/facet}}
-    </li>
-    <li>
-      {{#facet name="Category"}}
-      {{#if filterable}}
-      <b class="inline-filter-button">
-        <a class="webkite-toggle" data-target=".{{../../id}}-{{name}}-details-menu">{{downcase name}}<i></i></a>
-        <ul class="{{../../id}}-{{name}}-details-menu inline-filter-menu webkite-hide webkite-menu">
-          {{#each filterableValues}}
-          <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".{{../../../id}}-{{../name}}-details-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
-          {{/each}}
-        </ul>
-      </b>
-      {{else}}
-      <b>{{downcase name}}</b>
-      {{/if}}
-      {{#if filterable}}
-      <span class="facet-values">
-        {{#each values}}
-        <a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>{{#unless @last}}, <br>{{/unless}}
-        {{/each}}
-      </span>
-      {{else}}
-      <span class="facet-values">
-      {{displayValue}}
-      </span>
-      {{/if}}
-      {{/facet}}
-    </li>
-  </ul>
-</div><!-- webkite-modal-block-forty -->
+      {{#facet name="Image"}}<img src="{{displayValue}}"/>{{/facet}}
+      {{#facet name="Business Name"}}<h2>{{displayValue}}</h2>{{/facet}}
+      <ul>
+        {{#any (find facets name="Address 1") (find facets name="City") (find facets name="State") (find facets name="Zip Code") (find facets name="Country") (find facets name="Address 2")}}
+          <li>
+            <span class="facet-values">
+              <a target="_blank" class="webkite-address" href="http://maps.google.com/?q={{#facet name='Address 1'}}{{displayValue}}{{/facet}} {{#facet name='City'}}{{displayValue}}{{/facet}} {{#facet name='State'}}{{displayValue}}{{/facet}} {{#facet name='Zip Code'}}{{displayValue}}{{/facet}} {{#facet name='Country'}}{{displayValue}}{{/facet}}">
+                {{#facet name="Address 1"}}<span>{{displayValue}}</span>{{/facet}}
+                {{#facet name="Address 2"}}<span>{{displayValue}}</span>{{/facet}}
+                <span>
+                  {{~#facet name="City"}}<span class="city">{{displayValue}}</span>{{/facet}}
+                  {{~#facet name="State"}}<span class="state">{{displayValue}}</span>{{/facet}}
+                  {{#facet name="Zip Code"}}{{displayValue}}{{/facet~}}
+                </span>
+                {{~#facet name="Country"}}<span>{{displayValue}}</span>{{/facet}}
+              </a>
+            </span>
+          </li>
+        {{/any}}
+        {{#facet name="Phone Number"}}
+          <li>
+            <span class="facet-values"><a href="tel:{{displayValue}}">{{displayValue}}</a></span>
+          </li>
+        {{/facet}}
+        {{#facet name="Category"}}
+          <li>
+            {{#if filterable}}
+              <b class="inline-filter-button">
+                <a class="webkite-toggle" data-target=".{{../../id}}-{{name}}-details-menu">{{downcase name}}<i></i></a>
+                <ul class="{{../../id}}-{{name}}-details-menu inline-filter-menu webkite-hide webkite-menu">
+                  {{#each filterableValues}}
+                    <li><a href="#" class="webkite-add-filter webkite-toggle" data-target=".{{../../../id}}-{{../name}}-details-menu" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a></li>
+                  {{/each}}
+                </ul>
+              </b>
+              <span class="facet-values">
+                {{#each values}}<a href="#" class="webkite-add-filter" data-facet="{{../name}}" data-operator="is" data-value="{{this}}">{{this}}</a>{{#unless @last}}, <br>{{/unless}}{{/each}}
+              </span>
+            {{else}}
+              <b>{{downcase name}}</b>
+              <span class="facet-values">{{displayValue}}</span>
+            {{/if}}
+          </li>
+        {{/facet}}
+      </ul>
+    </div><!-- webkite-modal-block-forty -->
     <div class="webkite-modal-block-sixty">
-  <ul>
-      {{#facet name="Description"}}<li><p class="description">{{displayValue}}</p></li>{{/facet}}
-      <li>
-        <b>website</b>
+      <ul>
+        {{#facet name="Description"}}
+          <li>
+            <p class="description">{{displayValue}}</p>
+          </li>
+        {{/facet}}
         {{#facet name="Website"}}
-        <span class="facet-values">
-        <a href="{{displayValue}}" class="webkite-website">{{displayValue}}</a>
-        </span>
+          <li>
+            <b>website</b>
+            <span class="facet-values"><a href="{{displayValue}}" class="webkite-website">{{displayValue}}</a></span>
+          </li>
         {{/facet}}
-      </li>
-      <li>
-        <b>fax number</b>
         {{#facet name="Fax Number"}}
-        <span class="facet-values">
-          <a href="tel:{{displayValue}}">{{displayValue}}</a>
-        </span>
+          <li>
+            <b>fax number</b>
+            <span class="facet-values"><a href="tel:{{displayValue}}">{{displayValue}}</a></span>
+          </li>
         {{/facet}}
-      </li>
-      <li>
-        <b>email</b>
         {{#facet name="Email"}}
-        <span class="facet-values">
-        <a href="mailto:{{displayValue}}">{{displayValue}}</a>
-        </span>
+          <li>
+            <b>email</b>
+            <span class="facet-values"><a href="mailto:{{displayValue}}">{{displayValue}}</a></span>
+          </li>
         {{/facet}}
-      </li>
-      <li>
-        <b>facebook</b>
         {{#facet name="Facebook"}}
-        <span class="facet-values">
-          <a href="{{displayValue}}" target="_blank" class="webkite-website">{{displayValue}}</a>
-        </span>
+          <li>
+            <b>facebook</b>
+            <span class="facet-values"><a href="{{displayValue}}" target="_blank" class="webkite-website">{{displayValue}}</a></span>
+          </li>
         {{/facet}}
-      </li>
-      <li>
-        <b>twitter</b>
         {{#facet name="Twitter"}}
-        <span class="facet-values">
-        <a href="https://twitter.com/{{displayValue}}" target="_blank" class="webkite-website">{{displayValue}}</a>
-        </span>
+          <li>
+            <b>twitter</b>
+            <span class="facet-values"><a href="https://twitter.com/{{displayValue}}" target="_blank" class="webkite-website">{{displayValue}}</a></span>
+          </li>
         {{/facet}}
-      </li>
-    </ul>
-</div><!-- webkite-moal-block-sixty -->
+      </ul>
+    </div><!-- webkite-moal-block-sixty -->
   </div><!-- webkite-modal-content -->
   <div class="webkite-modal-foot">
     <a href="#{{this.id}}" data-id={{this.id}} class="webkite-toggle-item less-button" data-animate="200ms" data-speed="100ms">less</a>
